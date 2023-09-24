@@ -14,7 +14,7 @@ class BaseApiController extends Controller
      * @param array|string|bool|null $result
      * @return JsonResponse
      */
-    public function sendResponse(array|string|bool $result = null): JsonResponse
+    public function sendResponse(array|string|bool|null $result = null): JsonResponse
     {
         $response = [
             'error' => null,

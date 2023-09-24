@@ -36,7 +36,7 @@ class AuthController extends BaseApiController
 
         $token = $user->createToken(config('app.name'));
 
-        return $this->sendResponse(['token' => $token->plainTextToken]);
+        return $this->respondWithToken($token->plainTextToken);
     }
 
     public function login(LoginRequest $request): JsonResponse
