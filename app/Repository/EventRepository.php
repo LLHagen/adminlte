@@ -22,6 +22,12 @@ class EventRepository
         return $this->buildEventResourceFromModelCollection(Event::all());
     }
 
+
+    public function getForUser(User $user): null|AnonymousResourceCollection
+    {
+        return $this->buildEventResourceFromModelCollection($user->events);
+    }
+
     public function create(array $createData): ?EventResource
     {
         $event = Event::create($createData);
